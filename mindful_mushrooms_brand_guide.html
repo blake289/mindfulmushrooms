@@ -223,6 +223,30 @@ table.product-table{width:100%;border-collapse:collapse}
 /* PRINT */
 @media print{
   .nav-sidebar{display:none}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav-sidebar { display: none }
+  .main { margin-left: 0 }
+  .page-section { padding: 2rem 1.25rem 1.75rem }
+  .cover { padding: 3rem 1.5rem 2.5rem }
+  .cover-title { font-size: 36px }
+  .cover-sub { font-size: 17px }
+  .cover-logo { width: 200px; margin-bottom: 2rem }
+  .cover-grid { grid-template-columns: 1fr 1fr; gap: 1rem }
+  .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr }
+  .logo-usage { grid-template-columns: 1fr }
+  .logo-dont-grid { grid-template-columns: 1fr 1fr }
+  .persona-grid { grid-template-columns: 1fr }
+  .value-is-not { grid-template-columns: 1fr }
+  .is-not-row { grid-template-columns: 1fr }
+  .do-dont-pair { grid-template-columns: 1fr }
+  .section-heading { font-size: 26px }
+  .type-scale-table { font-size: 12px }
+  .type-scale-table td, .type-scale-table th { padding: .5rem .4rem }
+  code { font-size: 11px; padding: 1rem; overflow-x: auto }
+}
+
   .main{margin-left:0}
   .page-section{page-break-inside:avoid}
   .cover{min-height:auto;padding:3rem}
