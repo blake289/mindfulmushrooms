@@ -3,91 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mindful Mushrooms — Business Card Redesign</title>
+  <title>Mindful Mushrooms — Business Card</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* ─── CSS Variables ─── */
-    :root {
-      --ink:         #1C1A16;
-      --cream:       #FAF8F4;
-      --taupe:       #C4AD8A;
-      --forest:      #2D4A2D;
-      --cream-dark:  #F0EDE6;
-      --taupe-light: #E0D5C3;
-      --ink-soft:    #6B6357;
-      --warm-white:  #FDFCF8;
-    }
-
-    /* ─── Reset & Base ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: var(--cream-dark);
+      background: #e8e3da;
       font-family: 'Jost', sans-serif;
-      color: var(--ink);
-      padding: 48px 32px 80px;
+      padding: 56px 48px 80px;
       min-height: 100vh;
     }
 
-    /* ─── Page Header ─── */
+    /* Page title */
     .page-title {
       font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
+      font-size: 18px;
+      font-weight: 400;
+      color: #5c5347;
+      letter-spacing: 0.3px;
+      text-align: center;
+      margin-bottom: 52px;
     }
 
-    .page-subtitle {
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: 56px;
-    }
-
-    /* ─── Variation Section ─── */
-    .variation {
-      margin-bottom: 64px;
-    }
-
-    .variation-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .variation-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--taupe-light);
-    }
-
-    /* ─── Card Row ─── */
+    /* Card row */
     .card-row {
       display: flex;
-      gap: 32px;
+      gap: 48px;
       align-items: flex-start;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
     .card-slot {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
+      align-items: flex-start;
     }
 
     .card-face-label {
@@ -95,706 +50,378 @@
       font-size: 9px;
       letter-spacing: 4px;
       text-transform: uppercase;
-      color: var(--ink-soft);
+      color: #8B7355;
     }
 
-    /* ─── Card Base ─── */
+    /* Card base */
     .card {
       width: 672px;
       height: 384px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-      border-radius: 3px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+      border-radius: 2px;
       flex-shrink: 0;
     }
 
-    /* ─── Design Legend ─── */
-    .legend {
-      margin-top: 20px;
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      color: var(--ink-soft);
-      max-width: 672px;
-      line-height: 1.6;
-      padding-left: 2px;
-      border-left: 2px solid var(--taupe-light);
-      padding-left: 12px;
-    }
 
-    .legend strong {
-      color: var(--ink);
-      font-weight: 500;
-    }
+    /* ─────────────────────────────────────
+       FRONT CARD
+    ───────────────────────────────────── */
 
-
-    /* ══════════════════════════════════════════
-       VARIATION 1 — Editorial Minimal
-    ══════════════════════════════════════════ */
-
-    /* V1 Front — Ink Dark */
-    .v1-front {
-      background: var(--ink);
-      padding: 44px 48px;
+    .front {
+      background: #0f0e0c;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 40px;
+      padding-bottom: 36px;
     }
 
-    .v1-front__brand-block {
+    /* Noise texture overlay */
+    .front::after {
+      content: '';
       position: absolute;
-      top: 44px;
-      left: 48px;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/feTurbulence%3E%3C/svg%3E");
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 1;
     }
 
-    .v1-front__wordmark {
-      font-family: 'Jost', sans-serif;
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      color: var(--taupe);
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .v1-front__rule {
-      width: 120px;
-      height: 1px;
-      background: var(--taupe);
-      opacity: 0.30;
-      border: none;
-      display: block;
-    }
-
-    .v1-front__center {
-      position: absolute;
-      top: 50%;
-      left: 48px;
-      transform: translateY(-50%);
-    }
-
-    .v1-front__name {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: #ffffff;
-      display: block;
-      line-height: 1.15;
-      margin-bottom: 8px;
-    }
-
-    .v1-front__title {
-      font-family: 'Jost', sans-serif;
-      font-size: 9px;
-      font-weight: 400;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--taupe);
-      display: block;
-    }
-
-    .v1-front__icon {
-      position: absolute;
-      bottom: 36px;
-      right: 44px;
-      font-size: 18px;
-      opacity: 0.20;
-      color: var(--taupe);
-      /* emoji color override via filter to match brand taupe */
-      filter: grayscale(1) sepia(0.6) brightness(1.1);
-      line-height: 1;
-    }
-
-    /* V1 Back — Cream */
-    .v1-back {
-      background: var(--cream);
-      padding: 0;
+    .front-inner {
       display: flex;
       flex-direction: column;
-    }
-
-    .v1-back__top-rule {
+      align-items: center;
+      justify-content: center;
+      flex: 1;
       width: 100%;
-      height: 1px;
-      background: var(--taupe);
-      opacity: 0.35;
-      flex-shrink: 0;
-      margin-top: 44px;
-    }
-
-    .v1-back__content {
-      display: flex;
-      flex: 1;
-      padding: 24px 48px 0;
-      gap: 32px;
-    }
-
-    .v1-back__left {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
+      z-index: 2;
       gap: 0;
     }
 
-    .v1-back__contact-name {
+    /* MINDFUL wordmark */
+    .front-mindful {
       font-family: 'Jost', sans-serif;
-      font-size: 8px;
-      font-weight: 500;
-      letter-spacing: 5px;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 7px;
       text-transform: uppercase;
-      color: var(--ink-soft);
-      display: block;
-      margin-bottom: 16px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 2px;
     }
 
-    .v1-back__phone {
-      font-family: 'Jost', sans-serif;
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--ink);
-      display: block;
-      margin-bottom: 5px;
+    /* MUSHROOMS display */
+    .front-mushrooms {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 10px;
     }
 
-    .v1-back__email {
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      color: var(--ink-soft);
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .v1-back__web {
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      color: var(--taupe);
-      display: block;
-      margin-bottom: 16px;
-    }
-
-    .v1-back__mid-rule {
-      width: 100%;
-      height: 1px;
-      background: var(--taupe);
-      opacity: 0.3;
-      border: none;
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .v1-back__address {
-      font-family: 'Jost', sans-serif;
-      font-size: 10px;
-      color: var(--ink-soft);
-      line-height: 1.5;
-    }
-
-    .v1-back__right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      padding-top: 22px;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-
-    .v1-back__qr {
-      width: 72px;
-      height: 72px;
-      border: 1px solid var(--taupe-light);
-      background: var(--cream-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 2px;
-    }
-
-    .v1-back__qr-text {
-      font-family: 'Jost', sans-serif;
-      font-size: 9px;
-      letter-spacing: 1px;
-      color: var(--taupe);
-      font-weight: 400;
-    }
-
-    .v1-back__qr-label {
+    /* Badge row */
+    .front-badge-row {
       font-family: 'Jost', sans-serif;
       font-size: 8px;
       letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--taupe);
-      text-align: center;
-      width: 72px;
+      color: #c9a96e;
+      margin-bottom: 3px;
     }
 
-    .v1-back__tagline {
-      position: absolute;
-      bottom: 28px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 13px;
-      color: var(--taupe);
-    }
-
-
-    /* ══════════════════════════════════════════
-       VARIATION 2 — Forest Craft
-    ══════════════════════════════════════════ */
-
-    /* V2 Front — Forest Green */
-    .v2-front {
-      background: var(--forest);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 48px;
-      position: relative;
-      gap: 0;
-    }
-
-    .v2-front__deco-line-top {
-      width: 60px;
-      height: 1px;
-      background: rgba(196, 173, 138, 0.4);
-      border: none;
-      display: block;
-      margin-bottom: 14px;
-    }
-
-    .v2-front__mindful {
-      font-family: 'Jost', sans-serif;
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 8px;
-      text-transform: uppercase;
-      color: rgba(196, 173, 138, 0.7);
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .v2-front__mushrooms {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      font-weight: 900;
-      color: var(--cream);
-      display: block;
-      margin-bottom: 10px;
-      line-height: 1;
-      letter-spacing: 1px;
-    }
-
-    .v2-front__deco-line-mid {
-      width: 40px;
-      height: 1px;
-      background: rgba(196, 173, 138, 0.4);
-      border: none;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .v2-front__region {
-      font-family: 'Jost', sans-serif;
-      font-size: 8px;
-      letter-spacing: 4px;
-      color: rgba(196, 173, 138, 0.5);
-      display: block;
-      margin-bottom: 18px;
-    }
-
-    .v2-front__name {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 22px;
-      color: var(--cream);
-      display: block;
-      margin-bottom: 6px;
-      line-height: 1.2;
-    }
-
-    .v2-front__role {
-      font-family: 'Jost', sans-serif;
-      font-size: 8px;
-      font-weight: 400;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--taupe);
-      display: block;
-      margin-bottom: 0;
-    }
-
-    .v2-front__bottom-tag {
-      position: absolute;
-      bottom: 22px;
-      left: 0;
-      right: 0;
-      text-align: center;
+    .front-badge-sub {
       font-family: 'Jost', sans-serif;
       font-size: 7px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: rgba(196, 173, 138, 0.3);
+      letter-spacing: 3px;
+      color: rgba(196,173,138,0.5);
     }
 
-    /* V2 Back — Warm White with Forest left accent */
-    .v2-back {
-      background: var(--warm-white);
-      border-left: 3px solid var(--forest);
-      display: flex;
-      flex-direction: column;
-      padding: 36px 40px 36px 44px;
-      position: relative;
+    /* Gold rule */
+    .front-rule {
+      width: 48px;
+      height: 1px;
+      background: #c9a96e;
+      opacity: 0.6;
+      margin: 20px auto;
+      border: none;
+      display: block;
     }
 
-    .v2-back__content {
-      display: flex;
-      gap: 24px;
-      flex: 1;
+    /* Name */
+    .front-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 0.5px;
     }
 
-    .v2-back__left {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .v2-back__section-label {
+    /* Title */
+    .front-role {
       font-family: 'Jost', sans-serif;
       font-size: 8px;
-      font-weight: 500;
+      font-weight: 400;
       letter-spacing: 5px;
       text-transform: uppercase;
-      color: var(--forest);
-      display: block;
-      margin-bottom: 12px;
+      color: #c9a96e;
+      margin-top: 6px;
     }
 
-    .v2-back__phone {
+
+    /* ─────────────────────────────────────
+       BACK CARD
+    ───────────────────────────────────── */
+
+    .back {
+      background: #f5f0e8;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 36px 36px 28px 44px;
+    }
+
+    /* Left accent line */
+    .back-accent {
+      position: absolute;
+      left: 0;
+      top: 20%;
+      height: 60%;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, #c9a96e, transparent);
+    }
+
+    /* Two-column layout */
+    .back-columns {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex: 1;
+    }
+
+    /* Left column */
+    .back-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .back-contact-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 8px;
+      font-weight: 400;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #c9a96e;
+      margin-bottom: 20px;
+    }
+
+    .back-website {
       font-family: 'Playfair Display', serif;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
-      color: var(--ink);
-      display: block;
-      margin-bottom: 6px;
-      line-height: 1.2;
-    }
-
-    .v2-back__email {
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      color: var(--ink-soft);
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .v2-back__web {
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      color: var(--taupe);
-      text-decoration: underline;
-      text-decoration-color: rgba(196, 173, 138, 0.45);
-      text-underline-offset: 2px;
+      color: #0f0e0c;
+      margin-bottom: 14px;
       display: block;
     }
 
-    .v2-back__address {
+    .back-phone {
       font-family: 'Jost', sans-serif;
-      font-size: 10px;
-      color: var(--ink-soft);
-      line-height: 1.55;
-      margin-top: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #2a2420;
+      display: block;
+      margin-bottom: 10px;
     }
 
-    .v2-back__right {
+    .back-email {
+      font-family: 'Jost', sans-serif;
+      font-size: 10.5px;
+      font-weight: 400;
+      color: #4a4440;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .back-mid-rule {
+      width: 140px;
+      height: 1px;
+      background: #e0d5c3;
+      border: none;
+      margin: 10px 0;
+      display: block;
+    }
+
+    .back-address {
+      font-family: 'Jost', sans-serif;
+      font-size: 9.5px;
+      font-weight: 300;
+      color: #7a7268;
+      line-height: 1.6;
+    }
+
+    /* Right column — QR */
+    .back-right {
+      width: 100px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding-top: 22px;
-      gap: 8px;
       flex-shrink: 0;
     }
 
-    .v2-back__qr {
-      width: 68px;
-      height: 68px;
-      border: 1px solid var(--forest);
-      background: rgba(45, 74, 45, 0.04);
+    .back-qr-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 7px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c9a96e;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .back-qr {
+      width: 80px;
+      height: 80px;
+      border: 1.5px solid #c9a96e;
+      background: #ede8df;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 2px;
     }
 
-    .v2-back__qr-inner {
-      font-family: 'Jost', sans-serif;
-      font-size: 9px;
-      letter-spacing: 1px;
-      color: var(--forest);
-      opacity: 0.5;
+    /* QR grid */
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(9, 7px);
+      grid-template-rows: repeat(9, 7px);
+      gap: 1.5px;
     }
 
-    .v2-back__qr-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 7px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--forest);
-      text-align: center;
+    .qr-cell {
+      width: 7px;
+      height: 7px;
     }
 
-    .v2-back__bottom {
+    .qr-cell.dark  { background: #1C1A16; }
+    .qr-cell.light { background: #ede8df; }
+
+    /* Bottom of back card */
+    .back-bottom {
       position: absolute;
-      bottom: 0;
-      left: 3px; /* offset for border-left */
-      right: 0;
-      padding: 0 40px 26px 44px;
+      bottom: 20px;
+      left: 44px;
+      right: 24px;
     }
 
-    .v2-back__bottom-rule {
+    .back-bottom-rule {
       width: 100%;
       height: 1px;
-      background: var(--taupe-light);
+      background: #e0d5c3;
       border: none;
-      display: block;
       margin-bottom: 10px;
+      display: block;
     }
 
-    .v2-back__tagline {
+    .back-tagline {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: 13px;
-      color: var(--ink-soft);
-      text-align: center;
+      color: #c9a96e;
+      text-align: right;
       display: block;
-    }
-
-
-    /* ─── Print Stylesheet ─── */
-    @media print {
-      body {
-        background: white;
-        padding: 0;
-      }
-
-      .page-title,
-      .page-subtitle,
-      .variation-label,
-      .card-face-label,
-      .legend {
-        display: none !important;
-      }
-
-      .variation {
-        margin-bottom: 0;
-        page-break-after: always;
-      }
-
-      .card-row {
-        gap: 0.25in;
-      }
-
-      .card {
-        box-shadow: none;
-        /* At 2x scale, 672px = 3.5in screen. Print at actual size: */
-        width: 3.5in;
-        height: 2in;
-      }
-
-      /* Scale all internal font sizes for print (halve from 2x screen) */
-      .v1-front__wordmark  { font-size: 4.5pt; }
-      .v1-front__name      { font-size: 14pt; }
-      .v1-front__title     { font-size: 4.5pt; }
-      .v1-front__icon      { font-size: 9pt; }
-      .v1-back__contact-name { font-size: 4pt; }
-      .v1-back__phone      { font-size: 6.5pt; }
-      .v1-back__email,
-      .v1-back__web        { font-size: 5.5pt; }
-      .v1-back__address    { font-size: 5pt; }
-      .v1-back__qr         { width: 36pt; height: 36pt; }
-      .v1-back__qr-text    { font-size: 4.5pt; }
-      .v1-back__qr-label   { font-size: 4pt; width: 36pt; }
-      .v1-back__tagline    { font-size: 6.5pt; bottom: 14pt; }
-
-      .v2-front__mindful   { font-size: 5pt; }
-      .v2-front__mushrooms { font-size: 18pt; }
-      .v2-front__region    { font-size: 4pt; }
-      .v2-front__name      { font-size: 11pt; }
-      .v2-front__role      { font-size: 4pt; }
-      .v2-front__bottom-tag { font-size: 3.5pt; bottom: 11pt; }
-
-      .v2-back__section-label { font-size: 4pt; }
-      .v2-back__phone      { font-size: 8pt; }
-      .v2-back__email,
-      .v2-back__web        { font-size: 5.5pt; }
-      .v2-back__address    { font-size: 5pt; }
-      .v2-back__qr         { width: 34pt; height: 34pt; }
-      .v2-back__qr-label   { font-size: 3.5pt; }
-      .v2-back__tagline    { font-size: 6.5pt; }
     }
   </style>
 </head>
 <body>
 
-  <h1 class="page-title">Mindful Mushrooms — Business Card Redesign</h1>
-  <p class="page-subtitle">2 Variations · 3.5 × 2 in · Rendered at 2× screen scale</p>
+  <h1 class="page-title">Mindful Mushrooms — Business Card</h1>
 
+  <div class="card-row">
 
-  <!-- ══════════════════════════════════════════
-       VARIATION 1 — Editorial Minimal
-  ══════════════════════════════════════════ -->
-  <div class="variation" id="variation-1">
-
-    <div class="variation-label">Variation 1 — Editorial Minimal</div>
-
-    <div class="card-row">
-
-      <!-- V1 FRONT -->
-      <div class="card-slot">
-        <span class="card-face-label">Front</span>
-        <div class="card v1-front">
-
-          <!-- Brand block top-left -->
-          <div class="v1-front__brand-block">
-            <span class="v1-front__wordmark">Mindful Mushrooms</span>
-            <span class="v1-front__rule"></span>
-          </div>
-
-          <!-- Vertically centered name -->
-          <div class="v1-front__center">
-            <span class="v1-front__name">Ivo Fedak</span>
-            <span class="v1-front__title">Founder &amp; CEO</span>
-          </div>
-
-          <!-- Bottom-right mushroom icon -->
-          <span class="v1-front__icon" aria-hidden="true">🍄</span>
-
+    <!-- FRONT -->
+    <div class="card-slot">
+      <span class="card-face-label">Front</span>
+      <div class="card front">
+        <div class="front-inner">
+          <span class="front-mindful">Mindful</span>
+          <span class="front-mushrooms">Mushrooms</span>
+          <span class="front-badge-row">· SD · 🍄 · CA ·</span>
+          <span class="front-badge-sub">Cultivated with Care</span>
+          <hr class="front-rule">
+          <span class="front-name">Ivo Fedak</span>
+          <span class="front-role">Founder &amp; CEO</span>
         </div>
       </div>
+    </div>
 
-      <!-- V1 BACK -->
-      <div class="card-slot">
-        <span class="card-face-label">Back</span>
-        <div class="card v1-back">
+    <!-- BACK -->
+    <div class="card-slot">
+      <span class="card-face-label">Back</span>
+      <div class="card back">
 
-          <!-- Top thin rule -->
-          <div class="v1-back__top-rule"></div>
+        <!-- Left accent -->
+        <div class="back-accent"></div>
 
-          <!-- Two-column content -->
-          <div class="v1-back__content">
+        <!-- Two columns -->
+        <div class="back-columns">
 
-            <!-- Left column -->
-            <div class="v1-back__left">
-              <span class="v1-back__contact-name">Ivo Fedak</span>
-              <span class="v1-back__phone">(619) 669-8682</span>
-              <span class="v1-back__email">ivo@mindfulmushroomstore.com</span>
-              <span class="v1-back__web">mindfulmushroomstore.com</span>
-              <hr class="v1-back__mid-rule">
-              <span class="v1-back__address">1235 Pierre Way, Ste 150<br>San Diego, CA 92021</span>
-            </div>
-
-            <!-- Right column — QR -->
-            <div class="v1-back__right">
-              <div class="v1-back__qr">
-                <span class="v1-back__qr-text">QR</span>
-              </div>
-              <span class="v1-back__qr-label">Scan to visit</span>
-            </div>
-
+          <!-- Left -->
+          <div class="back-left">
+            <span class="back-contact-label">Contact</span>
+            <span class="back-website">mindfulmushroomstore.com</span>
+            <span class="back-phone">(619) 669-8682</span>
+            <span class="back-email">ivo@mindfulmushroomstore.com</span>
+            <hr class="back-mid-rule">
+            <span class="back-address">1235 Pierre Way, Ste 150<br>San Diego, CA 92021</span>
           </div>
 
-          <!-- Bottom centered tagline -->
-          <span class="v1-back__tagline">"Cultivated with Care" · SD · CA</span>
-
-        </div>
-      </div>
-
-    </div><!-- /.card-row -->
-
-    <p class="legend">
-      <strong>Editorial Minimal:</strong> High contrast ink-on-cream palette with generous whitespace draws from luxury editorial design — the dark front creates a bold first impression while the structured cream back delivers information with quiet authority.
-    </p>
-
-  </div><!-- /#variation-1 -->
-
-
-  <!-- ══════════════════════════════════════════
-       VARIATION 2 — Forest Craft
-  ══════════════════════════════════════════ -->
-  <div class="variation" id="variation-2">
-
-    <div class="variation-label">Variation 2 — Forest Craft</div>
-
-    <div class="card-row">
-
-      <!-- V2 FRONT -->
-      <div class="card-slot">
-        <span class="card-face-label">Front</span>
-        <div class="card v2-front">
-
-          <hr class="v2-front__deco-line-top">
-          <span class="v2-front__mindful">Mindful</span>
-          <span class="v2-front__mushrooms">Mushrooms</span>
-          <hr class="v2-front__deco-line-mid">
-          <span class="v2-front__region">SD · ✦ · CA</span>
-
-          <!-- spacer between brand and person -->
-          <div style="height: 10px; flex-shrink: 0;"></div>
-
-          <span class="v2-front__name">Ivo Fedak</span>
-          <span class="v2-front__role">Founder &amp; CEO</span>
-
-          <!-- Bottom whisper tag -->
-          <span class="v2-front__bottom-tag">Cultivated with Care</span>
-
-        </div>
-      </div>
-
-      <!-- V2 BACK -->
-      <div class="card-slot">
-        <span class="card-face-label">Back</span>
-        <div class="card v2-back">
-
-          <div class="v2-back__content">
-
-            <!-- Left column -->
-            <div class="v2-back__left">
-              <span class="v2-back__section-label">Contact</span>
-              <span class="v2-back__phone">(619) 669-8682</span>
-              <span class="v2-back__email">ivo@mindfulmushroomstore.com</span>
-              <span class="v2-back__web">mindfulmushroomstore.com</span>
-              <span class="v2-back__address">1235 Pierre Way, Ste 150<br>San Diego, CA 92021</span>
+          <!-- Right — QR -->
+          <div class="back-right">
+            <span class="back-qr-label">Order Online →</span>
+            <div class="back-qr">
+              <!-- 9×9 QR pattern: 1=dark, 0=light -->
+              <div class="qr-grid" id="qr-grid"></div>
             </div>
-
-            <!-- Right column — QR -->
-            <div class="v2-back__right">
-              <div class="v2-back__qr">
-                <span class="v2-back__qr-inner">QR</span>
-              </div>
-              <span class="v2-back__qr-label">Scan</span>
-            </div>
-
-          </div>
-
-          <!-- Bottom rule + tagline -->
-          <div class="v2-back__bottom">
-            <hr class="v2-back__bottom-rule">
-            <span class="v2-back__tagline">"Cultivated with Care" · San Diego, CA</span>
           </div>
 
         </div>
+
+        <!-- Bottom -->
+        <div class="back-bottom">
+          <hr class="back-bottom-rule">
+          <span class="back-tagline">"Cultivated with Care" · SD · CA</span>
+        </div>
+
       </div>
+    </div>
 
-    </div><!-- /.card-row -->
+  </div><!-- /.card-row -->
 
-    <p class="legend">
-      <strong>Forest Craft:</strong> The deep forest green grounds the brand in nature and craft — centered composition with layered typographic hierarchy evokes small-batch artisan goods, while the left-accented warm-white back signals transparency and trust.
-    </p>
+  <script>
+    const pattern = [
+      [1,1,1,1,1,1,1,0,1],
+      [1,0,0,0,0,0,1,0,0],
+      [1,0,1,1,1,0,1,0,1],
+      [1,0,1,1,1,0,1,0,0],
+      [1,0,0,0,0,0,1,0,1],
+      [1,1,1,1,1,1,1,0,0],
+      [0,0,0,0,0,0,0,0,1],
+      [0,1,1,0,1,0,1,1,0],
+      [1,0,1,0,0,1,0,1,1]
+    ];
 
-  </div><!-- /#variation-2 -->
+    const grid = document.getElementById('qr-grid');
+    pattern.forEach(row => {
+      row.forEach(cell => {
+        const div = document.createElement('div');
+        div.className = 'qr-cell ' + (cell === 1 ? 'dark' : 'light');
+        grid.appendChild(div);
+      });
+    });
+  </script>
 
 </body>
 </html>
